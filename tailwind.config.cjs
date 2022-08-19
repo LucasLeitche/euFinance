@@ -8,7 +8,11 @@ module.exports = {
       'dark-lilac' : '#0d002d',
       'light-lilac' : '#42226c',
       'lilac' : '#1a093d',
-      'light' : '#fff'
+      'light' : '#fff',
+      'red-dark' : '#CC1F1A',
+      'green-dark' : '#1F9D55',
+      'yellow-dark' : '#F2D024',
+      'blue-dark' : '#2779BD'
       }
     },
   },

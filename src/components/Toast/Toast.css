@@ -1,0 +1,66 @@
+.toast{
+    @apply 
+    absolute
+    z-[10]
+    flex
+    md:right-10
+    right-3
+    top-24
+    shadow-lg
+    border
+    rounded-2xl
+    border-slate-200
+    text-black
+    dark:text-slate-100
+    text-[12px]
+    py-5
+    px-2
+    items-center
+    
+}
+
+.toast-success{
+    @apply
+    border-l-8
+    border-l-green-dark
+    dark:bg-green-dark
+    bg-white
+    dark:border-transparent
+
+}
+
+.toast-error{
+    @apply
+    border-l-8
+    border-l-red-dark
+    dark:bg-red-dark
+    bg-white
+    dark:border-transparent
+
+}
+
+.toast-info{
+    @apply
+    border-l-8
+    border-l-blue-dark
+    dark:bg-blue-dark
+    dark:border-transparent
+    bg-white
+}
+
+.toast-warning{
+    @apply
+    border-l-8
+    border-l-yellow-dark
+    dark:bg-yellow-dark
+    dark:border-transparent
+    bg-white
+
+}
+
+.iconContainer{
+    @apply 
+    border
+    rounded-[50%]
+    mx-2
+}

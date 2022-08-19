@@ -17,7 +17,7 @@
     p-2
     placeholder:text-[15px]
     text-gray-600
-    bg-gray-300
+    bg-slate-200
     focus:outline-none focus:ring-2 focus:ring-zinc-400 
     transition
     rounded-2xl
@@ -27,22 +27,31 @@
 .btn{
     @apply
     border
-    border-dark-lilac
-    dark:bg-light-lilac
     rounded
     w-full
     py-2
     dark:border
-    dark:border-dark-lilac
-    text-[18px]
-    text-dark-lilac
-    dark:text-gray-300
     font-[400]
+    text-[18px]
+}
+
+.btn-primary{
+    @apply
+    border-dark-lilac
     disabled:opacity-80
+    disabled:bg-slate-200
+    text-dark-lilac
+    dark:bg-light-lilac
+    dark:border-dark-lilac
+    dark:text-gray-300
 }
 .container{
     @apply
     w-[95%]
     mx-auto
     p-2
+}
+#app{
+    @apply
+    relative
 }
