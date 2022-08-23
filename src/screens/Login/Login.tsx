@@ -1,22 +1,16 @@
-import { useContext } from 'react';
-import { useNavigate } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux';
 
 import FinanceIlustration from '../../assets/images/Finance_analytics _Monochromatic.svg';
 
-import { userContext } from '../../App';
 
-import type { UserService } from '../../repositories/UserServices';
 import type { CheangeUserNameType } from './services/LoginServices';
 import type { RootState } from '../../store/services/StoreServices';
 
 
 export function Login({changeUserName}:CheangeUserNameType){
-    const navigate = useNavigate();
 
-    // const user = useContext< UserService | null>(userContext);
-    const user = useSelector((state: RootState) => state.user)
-    const dispatch = useDispatch();
+    const user = useSelector((state : RootState ) => state.user);
+    // const dispatch = useDispatch();
     
     
     function handleAuthentication(){
@@ -36,7 +30,7 @@ export function Login({changeUserName}:CheangeUserNameType){
                         type="text" 
                         placeholder='Nome'
                     />
-                    <button className='btn btn-primary' disabled={!user?.nome} onClick={()=> handleAuthentication()}>Enviar</button>
+                    <button className='btn btn-primary' disabled={!user?.nome} onClick={ () => handleAuthentication()}>Enviar</button>
                 </div>
             </div>
         </section>

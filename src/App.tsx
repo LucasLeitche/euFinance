@@ -1,28 +1,28 @@
-import { createContext, useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { setUser } from './store/user/UserSlice';
+import { setUser, setTheme } from './store/user/UserSlice';
 
-import { Provider } from 'react-redux';
 
 import { Rotas } from './routes/rotas';
+
+
 
 import './global.css';
 
 import { ThemeToogle } from './components/ThemeToggle';
 import { Toast } from './components/Toast/Index';
 
-import { ThemeType, UserService } from './repositories/UserServices';
-import { store } from './store';
+import type { ThemeType, UserService } from './repositories/UserServices';
+import type { RootState } from './store/services/StoreServices';
 
-export const userContext = createContext< UserService | null >(null);
 
 
 function App() {
     
-    //States
-    const [theme, setTheme] = useState< ThemeType >('light');
-    const [user, setUser] = useState< UserService | null >({ nome: null, theme: 'light' });
+    const user = useSelector((state :RootState ) => state.user);
+    const dispatch = useDispatch();
+    //State
 
     //Variables
     const navigate = useNavigate();
@@ -35,9 +35,9 @@ function App() {
 
         getUsersStorage();
     }, []);
-
+    type storageValue = 'light' | 'dark'
     //Data Control
-    function setThemeStorage(value?: ThemeType){
+    function setThemeStorage(value : ThemeType){
 
         localStorage.removeItem('theme');
 
@@ -48,14 +48,14 @@ function App() {
 
         const storage = localStorage.getItem('theme');
 
-        if(storage === 'dark' || storage == 'light'){
+        if(storage == 'dark' || storage == 'light'){
             handleChangeTheme(storage);
         }
 
     }
     
     //Storage Control
-    function setUserStorage(value?: UserService){
+    function setUserStorage(value : UserService){
         
         localStorage.removeItem('user');
         localStorage.setItem('user', JSON.stringify(value));
@@ -74,34 +74,32 @@ function App() {
     }
 
     //Methods
-    function handleSetUser(value? : object){
+    function handleSetUser(value : object){
 
     }
 
-    function  handleChangeTheme(value? : ThemeType ){
+    function  handleChangeTheme(value : ThemeType ){
 
         const app  = document.getElementById('app');
 
-        setTheme(value!);
-        setUser({theme:value});
+        dispatch(setUser({ theme: value }));
+
+        
 
         app?.classList.remove('dark');
         app?.classList.remove('light');
         app?.classList.add(`${value}`);
        
         setThemeStorage(value);
+        console.log('passou aqui ')
         
     }
 
     return (
         <main id='app' className="">
-            <Provider store={store}>
-                <userContext.Provider value={user}>
-                    <ThemeToogle changeThemeEmit={handleChangeTheme}/> 
-                    <Rotas/>
-                    <Toast type='success' text='Successo ao logar e lorem inpsu out tyoe'/>
-                </userContext.Provider>
-            </Provider>
+                <ThemeToogle changeThemeEmit={handleChangeTheme}/> 
+                <Rotas/>
+                <Toast type='success' text='Successo ao logar e lorem inpsu out tyoe'/>
         </main>
     )
 }
