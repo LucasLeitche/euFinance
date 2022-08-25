@@ -7,7 +7,7 @@ export interface UserState{
     token?: string | null
 }
 
-const initialState : UserState={
+const initialState : UserState = {
         nome: null,
         theme: 'light',
         token: null
@@ -17,9 +17,12 @@ export const userSlice = createSlice({
     name: 'user',
     initialState,
     reducers: {
-        setUser: (state, {nome, token}: any ) => {
+        setUser: (state, actions ) => {
+            const {nome, token, theme} = actions.payload
+            console.log(nome, token, theme)
             state.nome = nome
             state.token = token
+            state.theme = theme
         },
         setTheme: (state, {theme}: any ) =>{
             state.theme = theme

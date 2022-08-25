@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { setUser, setTheme } from './store/user/UserSlice';
 
-
 import { Rotas } from './routes/rotas';
 
 
@@ -30,29 +29,13 @@ function App() {
     //Efects
     useEffect(()=>{
         navigate("/login");
-
-        getThemeStorage();
-
         getUsersStorage();
     }, []);
-    type storageValue = 'light' | 'dark'
+
     //Data Control
-    function setThemeStorage(value : ThemeType){
+    
 
-        localStorage.removeItem('theme');
-
-        localStorage.setItem('theme', value!);
-    }
-
-    function getThemeStorage(){
-
-        const storage = localStorage.getItem('theme');
-
-        if(storage == 'dark' || storage == 'light'){
-            handleChangeTheme(storage);
-        }
-
-    }
+    
     
     //Storage Control
     function setUserStorage(value : UserService){
@@ -78,26 +61,11 @@ function App() {
 
     }
 
-    function  handleChangeTheme(value : ThemeType ){
-
-        const app  = document.getElementById('app');
-
-        dispatch(setUser({ theme: value }));
-
-        
-
-        app?.classList.remove('dark');
-        app?.classList.remove('light');
-        app?.classList.add(`${value}`);
-       
-        setThemeStorage(value);
-        console.log('passou aqui ')
-        
-    }
+    
 
     return (
         <main id='app' className="">
-                <ThemeToogle changeThemeEmit={handleChangeTheme}/> 
+                <ThemeToogle /> 
                 <Rotas/>
                 <Toast type='success' text='Successo ao logar e lorem inpsu out tyoe'/>
         </main>
