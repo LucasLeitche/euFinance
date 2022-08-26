@@ -1,19 +1,16 @@
-import { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+
 import { useSelector, useDispatch } from 'react-redux';
-import { setUser, setTheme } from './store/user/UserSlice';
-
-import { Rotas } from './routes/rotas';
-
-
+import { Route, Routes, BrowserRouter as Router  } from 'react-router-dom';
 
 import './global.css';
 
 import { ThemeToogle } from './components/ThemeToggle';
 import { Toast } from './components/Toast/Index';
+import { Login } from './screens/Login/Login';
+import { Home } from './screens/Home';
 
-import type { ThemeType, UserService } from './repositories/UserServices';
 import type { RootState } from './store/services/StoreServices';
+import { PrivateRoute } from './routes/PrivateRoute';
 
 
 
@@ -24,13 +21,13 @@ function App() {
     //State
 
     //Variables
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
 
     //Efects
-    useEffect(()=>{
-        navigate("/login");
-        getUsersStorage();
-    }, []);
+    // useEffect(()=>{
+    //     navigate("/login");
+    //     getUsersStorage();
+    // }, []);
 
     //Data Control
     
@@ -38,36 +35,44 @@ function App() {
     
     
     //Storage Control
-    function setUserStorage(value : UserService){
+    // function setUserStorage(value : UserService){
         
-        localStorage.removeItem('user');
-        localStorage.setItem('user', JSON.stringify(value));
+    //     localStorage.removeItem('user');
+    //     localStorage.setItem('user', JSON.stringify(value));
 
-    }
+    // }
 
-    function getUsersStorage(){
+    // function getUsersStorage(){
 
-        const storage  = JSON.parse(localStorage.getItem('user')!);
+    //     const storage  = JSON.parse(localStorage.getItem('user')!);
 
-        if(typeof storage == typeof user){
-            handleSetUser(storage);
-        }else{
-            console.log('nostore');
-        }
-    }
+    //     if(typeof storage == typeof user){
+    //         handleSetUser(storage);
+    //     }else{
+    //         console.log('nostore');
+    //     }
+    // }
 
-    //Methods
-    function handleSetUser(value : object){
+    // //Methods
+    // function handleSetUser(value : object){
 
-    }
+    // }
 
     
 
     return (
         <main id='app' className="">
-                <ThemeToogle /> 
-                <Rotas/>
-                <Toast type='success' text='Successo ao logar e lorem inpsu out tyoe'/>
+            <ThemeToogle />
+            <Toast type='success' text='Successo ao logar e lorem inpsu out tyoe'/>
+            <Router>
+                <Routes>
+                    <Route path='/login' element={<Login/>}/>
+                    <Route path='/' element={ <PrivateRoute/> }>
+                        <Route path='/' element={<Home/>}/>
+                    </Route>
+                </Routes>
+            </Router>
+                
         </main>
     )
 }

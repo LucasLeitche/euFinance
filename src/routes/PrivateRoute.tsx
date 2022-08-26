@@ -1,13 +1,13 @@
-import {Route, Navigate } from 'react-router-dom';
+import {Route, Navigate, Outlet } from 'react-router-dom';
 
-import { PrivateRoutesService } from "../repositories/PrivateRoutesService";
-import { isAuthenticated } from "./auth";
-import { Login } from '../screens/Login';
+import { PrivateRoutesService, IPrivateRoutes } from "../repositories/PrivateRoutesService";
+// import { isAuthenticated } from "./auth";
 
-export function PrivateRoute ({isPrivate, path, element, ...rest}:PrivateRoutesService){
+const auth = false
+export function PrivateRoute() {
     return(
-        isAuthenticated() ?
-        <Route path={path} element={element} {...rest}/> :
-        <Route path='/login' element={<Login/>}/>
+        auth ?
+        <Outlet/> :
+        <Navigate to="/login"/>
     )
 }

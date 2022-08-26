@@ -1,13 +1,13 @@
-import { useSelector, useDispatch } from 'react-redux';
 
+
+import { useSelector } from 'react-redux';
 import FinanceIlustration from '../../assets/images/Finance_analytics _Monochromatic.svg';
 
 
-import type { CheangeUserNameType } from './services/LoginServices';
 import type { RootState } from '../../store/services/StoreServices';
 
 
-export function Login({changeUserName}:CheangeUserNameType){
+export function Login(){
 
     const user = useSelector((state : RootState ) => state.user);
     // const dispatch = useDispatch();
@@ -26,7 +26,7 @@ export function Login({changeUserName}:CheangeUserNameType){
                     <small className='dark:text-light text-dark-lilac text-[15px]'><strong className='text-yellow-400'>eu</strong>Finance</small>
                     <input 
                         className='input' 
-                        onChange={ (event) => changeUserName(event.target.value)} 
+                        // onChange={ (event) => changeUserName(event.target.value)} 
                         type="text" 
                         placeholder='Nome'
                     />
