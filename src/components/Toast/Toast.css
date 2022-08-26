@@ -22,8 +22,8 @@
 .toast-success{
     @apply
     border-l-8
-    border-l-green-dark
-    dark:bg-green-dark
+    border-l-dark-green
+    dark:bg-dark-green
     bg-white
     dark:border-transparent
 
@@ -32,8 +32,8 @@
 .toast-error{
     @apply
     border-l-8
-    border-l-red-dark
-    dark:bg-red-dark
+    border-l-dark-red
+    dark:bg-dark-red
     bg-white
     dark:border-transparent
 
@@ -42,8 +42,8 @@
 .toast-info{
     @apply
     border-l-8
-    border-l-blue-dark
-    dark:bg-blue-dark
+    border-l-dark-blue
+    dark:bg-dark-blue
     dark:border-transparent
     bg-white
 }
@@ -51,16 +51,11 @@
 .toast-warning{
     @apply
     border-l-8
-    border-l-yellow-dark
-    dark:bg-yellow-dark
+    border-l-dark-yellow
+    dark:bg-dark-yellow
     dark:border-transparent
     bg-white
 
 }
 
-.iconContainer{
-    @apply 
-    border
-    rounded-[50%]
-    mx-2
-}
+

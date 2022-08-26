@@ -34,7 +34,6 @@
     font-[400]
     text-[18px]
 }
-
 .btn-primary{
     @apply
     border-dark-lilac
@@ -43,7 +42,18 @@
     text-dark-lilac
     dark:bg-light-lilac
     dark:border-dark-lilac
-    dark:text-gray-300
+    dark:text-white
+}
+
+.btn-secondary{
+    @apply
+    bg-dark-lilac
+    disabled:opacity-80
+    disabled:bg-slate-200
+    text-light
+    dark:border-white
+    dark:bg-transparent
+    dark:text-white
 }
 .container{
     @apply

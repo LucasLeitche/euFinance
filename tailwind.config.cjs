@@ -9,10 +9,10 @@ module.exports = {
       'light-lilac' : '#42226c',
       'lilac' : '#1a093d',
       'light' : '#fff',
-      'red-dark' : '#CC1F1A',
-      'green-dark' : '#1F9D55',
-      'yellow-dark' : '#F2D024',
-      'blue-dark' : '#2779BD'
+      'dark-red' : '#CC1F1A',
+      'dark-green' : '#1F9D55',
+      'dark-yellow' : '#F2D024',
+      'dark-blue' : '#2779BD'
       }
     },
   },

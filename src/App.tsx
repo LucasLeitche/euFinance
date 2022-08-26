@@ -1,16 +1,14 @@
 
 import { useSelector, useDispatch } from 'react-redux';
-import { Route, Routes, BrowserRouter as Router  } from 'react-router-dom';
-
+import { RouterService } from './routes/RouterService';
 import './global.css';
 
 import { ThemeToogle } from './components/ThemeToggle';
 import { Toast } from './components/Toast/Index';
-import { Login } from './screens/Login/Login';
-import { Home } from './screens/Home';
+
 
 import type { RootState } from './store/services/StoreServices';
-import { PrivateRoute } from './routes/PrivateRoute';
+
 
 
 
@@ -63,16 +61,8 @@ function App() {
     return (
         <main id='app' className="">
             <ThemeToogle />
-            <Toast type='success' text='Successo ao logar e lorem inpsu out tyoe'/>
-            <Router>
-                <Routes>
-                    <Route path='/login' element={<Login/>}/>
-                    <Route path='/' element={ <PrivateRoute/> }>
-                        <Route path='/' element={<Home/>}/>
-                    </Route>
-                </Routes>
-            </Router>
-                
+            <Toast type='warning' text='Successo ao logar e lorem inpsu out tyoe'/>
+            <RouterService/>
         </main>
     )
 }

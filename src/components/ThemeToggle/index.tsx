@@ -6,6 +6,7 @@ import type { ThemeType, UserService } from '../../repositories/UserServices';
 import type { RootState } from "../../store/services/StoreServices";
 import { setUser } from "../../store/user/UserSlice";
 
+import {Moon, Sun} from 'phosphor-react'
 
 export function ThemeToogle(){
 
@@ -51,19 +52,29 @@ function getThemeStorage(){
 
 
     return(
-        <div className="bg-zinc-200 w-full max-w-[100px] absolute right-0 m-5 py-5 flex justify-around">
-            <input type="radio" name="" id=""
-                value="light"
-                checked={user.theme === 'light'}
-                onChange={(event) => handleChangeTheme(event.target.value)}  
-            />
-            
-            <input type="radio" name="" id=""
-                value="dark"
-                checked={user.theme === 'dark'}
-                onChange={(event) => handleChangeTheme(event.target.value)}  
-            />
-            <strong>{user.theme}</strong>
+        <div className="border border-dark shadow-sm shadow-dark-lilac dark:shadow-lg dark:border-light-lilac absolute right-0 m-5 p-1">
+            <div className="hidden">
+                <input type="radio" name="" id="chek-light"
+                    value="light"
+                    checked={user.theme === 'light'}
+                    onChange={(event) => handleChangeTheme(event.target.value)}  
+                />
+                 <input type="radio" name="" id="check-dark"
+                    value="dark"
+                    checked={user.theme === 'dark'}
+                    onChange={(event) => handleChangeTheme(event.target.value)}  
+                />
+             </div>
+                {
+                    user.theme == 'light' 
+                        ?
+                            <Moon size={30} className="" color='black'  onClick={() => handleChangeTheme('dark')}/>
+                        :
+                            <Sun size={30} color='white' onClick={() => handleChangeTheme('light')} />
+                }            
+                   
+               
+           
         </div>
     )
 }

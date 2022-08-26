@@ -2,15 +2,17 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "../services/StoreServices";
 
 export interface UserState{
-    nome?: string | null,
+    mail: string | null,
     theme: 'light' | 'dark',
-    token?: string | null
+    token: string | null,
+    pass: string | null
 }
 
 const initialState : UserState = {
-        nome: null,
+        mail: null,
         theme: 'light',
-        token: null
+        token: null,
+        pass: null
 }
 
 export const userSlice = createSlice({
@@ -18,11 +20,18 @@ export const userSlice = createSlice({
     initialState,
     reducers: {
         setUser: (state, actions ) => {
-            const {nome, token, theme} = actions.payload
-            console.log(nome, token, theme)
-            state.nome = nome
-            state.token = token
-            state.theme = theme
+
+            const {mail, token, theme, pass} = actions.payload
+            console.log(mail, token, theme)
+
+            state.mail = mail;
+            state.token = token; 
+            state.theme = theme; 
+            state.pass = pass;
+        },
+        setLogin: (state, action) =>{
+            const {mail, pass} = action.payload
+            console.log(mail, pass)
         },
         setTheme: (state, {theme}: any ) =>{
             state.theme = theme
@@ -31,6 +40,6 @@ export const userSlice = createSlice({
 
 })
 
-export const { setUser, setTheme } = userSlice.actions
+export const { setUser, setTheme, setLogin } = userSlice.actions
 
 export default userSlice.reducer
