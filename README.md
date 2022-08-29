@@ -2,9 +2,6 @@
 
 <small>Controle de receita e despesas financeiro</small>
 
-<p> Widget de feedback para incluir em qualquer aplicação web </p>
-
-<br/>
 
 <small>
   <strong>Projeto apenas em ambiente de desevolvimento para roda-lo seguir passos:</strong>
