@@ -3,10 +3,9 @@ import { FormEvent, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { setLogin } from '../../store/user/UserSlice';
 
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import SmartPhoneFinance from './assets/img/Online_payment_Two_Color.svg';
-import { ArrowLeft } from 'phosphor-react';
 
 export function Login(){
     
@@ -15,7 +14,6 @@ export function Login(){
     const [mail, setMail] = useState<string | null>(null);
     const [pass, setPass] = useState<string | null>(null);
 
-    const navigate = useNavigate();
 
     function handleSubmit(event: FormEvent){
         event.preventDefault();
@@ -25,24 +23,13 @@ export function Login(){
     }
 
     return(
-        <section className='dark:bg-black h-screen'>
-             <ArrowLeft 
-                size={30} weight="bold" className='text-light-lilac dark:text-light absolute left-5 top-6 block lg:hidden' 
-                onClick={()=> navigate('/start')}
-            />
-            <button 
-                className='absolute left-5 top-5 border  bg-dark-lilac dark:bg-transparent text-light rounded-lg hidden lg:flex items-center px-4 p-1'
-                onClick={()=> navigate('/start')}   
-            >
-                <ArrowLeft size={30} weight="bold" className='' />
-                <span className='ml-2 ' >Incio</span>
-            </button>
+        <section className='dark:bg-black h-screen flex w-screen'>
             <div className='flex flex-col items-center justify-center h-full w-full'>
                 <img className='w-full max-w-[450px]' 
                     src={SmartPhoneFinance} 
                     alt="Smartphone " 
                 />
-                <div className="flex flex-col items-center w-full max-w-[350px] px-5 gap-4 ">
+                <div className="flex flex-col items-center w-full max-w-xl px-5 gap-4 ">
                     <small className='dark:text-light text-dark-lilac text-[15px]'>
                         <strong className='text-yellow-400'>eu</strong>Finance
                     </small>

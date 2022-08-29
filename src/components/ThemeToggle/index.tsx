@@ -1,6 +1,6 @@
 import { useEffect } from "react"
 import { useSelector, useDispatch } from 'react-redux';
-import { ChangeThemeEmitType } from "./services/ToggleServices"
+import { ChangeThemeEmitType } from "./services/ToggleServices";
 
 import type { ThemeType, UserService } from '../../repositories/UserServices';
 import type { RootState } from "../../store/services/StoreServices";

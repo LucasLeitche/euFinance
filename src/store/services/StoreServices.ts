@@ -3,9 +3,11 @@ import { store } from "../index"
 export type RootState = ReturnType<typeof store.getState>
 
 export interface UserState{
-    nome: string | null,
-    theme: string,
-    token?: string | null
+    name: string | null;
+    mail: string | null;
+    theme: 'light' | 'dark';
+    token: string | null;
+    pass: string | null;
 }
 
 export type AppDispatch = typeof store.dispatch

@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {Routes, Route } from "react-router-dom";
 
 import { PrivateRoute } from "./PrivateRoute";
 import { Login } from "../screens/Login/Login";
@@ -9,7 +9,6 @@ import { UserRegister } from "../screens/user/UserRegister";
 
 export function RouterService(){
     return (
-        <Router>
             <Routes>
                 <Route path='/start' element={ <InitialScrren/> }/>
                 <Route path='/login' element={ <Login/> }/>
@@ -19,6 +18,5 @@ export function RouterService(){
                 </Route>
                     <Route path='*' element={ <NotFound/> }/>
             </Routes>
-        </Router>
     )
 }

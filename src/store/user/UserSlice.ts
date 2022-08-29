@@ -1,14 +1,9 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { RootState } from "../services/StoreServices";
 
-export interface UserState{
-    mail: string | null,
-    theme: 'light' | 'dark',
-    token: string | null,
-    pass: string | null
-}
+import type { UserState } from "../services/StoreServices";
 
 const initialState : UserState = {
+        name: null,
         mail: null,
         theme: 'light',
         token: null,
@@ -21,9 +16,9 @@ export const userSlice = createSlice({
     reducers: {
         setUser: (state, actions ) => {
 
-            const {mail, token, theme, pass} = actions.payload
-            console.log(mail, token, theme)
-
+            const {name, mail, token, theme, pass} = actions.payload;
+            
+            state.name = name;
             state.mail = mail;
             state.token = token; 
             state.theme = theme; 
