@@ -1,12 +1,14 @@
 # euFinance
 
 <small>Controle de receita e despesas financeiro</small>
-</br>
 
+<br/>
+<br/>
 
 <small>
   <strong>Projeto apenas em ambiente de desevolvimento para roda-lo seguir passos:</strong>
   
+  <br/>
   <br/>
   
   Clonar projeto, ou compacta-lo.
