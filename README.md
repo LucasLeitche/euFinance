@@ -1,7 +1,6 @@
 # euFinance
 
-# Feedback Widget
-<small>Projeto NLW Rocket Seat em React</small>
+<small>Controle de receita e despesas financeiro</small>
 
 <p> Widget de feedback para incluir em qualquer aplicação web </p>
 
