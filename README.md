@@ -1,41 +1,22 @@
 # euFinance
 
-<small>Controle de receita e despesas financeiro</small>
+Controle de despesa e receita financeira.
 
-<br/>
+<strong>Tecnologias</strong>
+<ul>
+  <li>Vue 3, Vuex, Vue Router</li>
+  <li>Axios</li>
+  <li>Firebase</li>
+</ul>
 
-<small>
-  <strong>Projeto apenas em ambiente de desevolvimento para roda-lo seguir passos:</strong>
-  
-  <br/>
-  <br/>
-  
-  Clonar projeto, ou compacta-lo.
-  
-  <br/>
-  
-  <strong>Dentro do projeto</strong>
-  
-  <br/>
-  
-  npm install
-  
-  <br/>
-  
-  npm run dev
-  
-  <br/>
-</small>
+<h2> Para visualizar no ambiente de desenvolvimento </h2>
 
+git clone https://github.com/LucasLeitche/euFinance.git
 
-<h2> Tecnologias </h2>
+cd applience
 
-Typescript
+git checkout developer
 
-React.js
+npm i --save
 
-React Router
-
-Redux
-
-Tailwindcss
+npm run dev
