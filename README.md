@@ -12,10 +12,8 @@ Controle de despesa e receita financeira.
 
 git clone https://github.com/LucasLeitche/euFinance.git
 
-cd applience
-
-git checkout developer
+cd euFinance
 
 npm i --save
 
-npm run dev
+npm run start
