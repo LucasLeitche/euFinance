@@ -4,9 +4,8 @@ Controle de despesa e receita financeira.
 
 <strong>Tecnologias</strong>
 <ul>
-  <li>Vue 3, Vuex, Vue Router</li>
-  <li>Axios</li>
-  <li>Firebase</li>
+  <li>React, React Router, Redux</li>
+  <li>Typescript</li>
 </ul>
 
 <h2> Para visualizar no ambiente de desenvolvimento </h2>
