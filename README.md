@@ -16,4 +16,4 @@ cd euFinance
 
 npm i --save
 
-npm run start
+npm run dev
